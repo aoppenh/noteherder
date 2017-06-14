@@ -1,7 +1,32 @@
 button {
-  height: 5rem;
+  height: 3rem;
+  width: 7rem;
+  font-size: 4rem;
+  color: black;
+  transition: 2s;
+}
+
+#clear:hover {
+  height: 6rem;
   width: 10rem;
   font-size: 4rem;
+  color: black !important;
+  background-color: firebrick;
+  transition: 2s;
+}
+
+#del:hover {
+  font-size: 3rem;
+  color: black !important;
+  background-color: crimson;
+  transition: 2s;
+}
+
+#fav:hover {
+  font-size: 3rem;
+  color: black !important;
+  background-color: goldenrod;
+  transition: 2s;
 }
 
 .NoteList {
@@ -38,7 +63,7 @@ ul#notes {
 }
 
 ul#notes > li {
-  height: 100px;
+  height: 150px;
   font-size: 90%;
   cursor: pointer;
   overflow: hidden;
@@ -47,6 +72,7 @@ ul#notes > li {
 ul#notes > li,
 ul#notes > li * {
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  transition: 2s;
 }
 
 ul#notes li .note {
@@ -59,14 +85,18 @@ ul#notes li:first-of-type .note {
 }
 ul#notes li:hover {
   background-color: #008BF8;
+  transition: 2s;
 }
 ul#notes li:hover,
 ul#notes li:hover .note * {
-  color: white !important;
+  /*color: white !important;*/
+  color: white;
   text-decoration: none !important;
+  transition: 2s;
 }
 ul#notes li:hover .note {
   border-color: transparent;
+  transition: 2s;
 }
 ul#notes li .note-title {
   color: #4a4a4a;

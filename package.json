@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "react": "^15.6.0",
-    "react-dom": "^15.6.0"
+    "react-audio-player": "^0.5.0",
+    "react-dom": "^15.6.0",
+    "react-sound": "^0.6.1"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"
