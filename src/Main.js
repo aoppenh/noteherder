@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './Main.css'
+
 import Side from './Sidebar'
 import List from './NoteList'
 import Form from './NoteForm'

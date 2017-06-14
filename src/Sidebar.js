@@ -2,6 +2,7 @@ import React from 'react'
 
 import quill from './quill.svg'
 import './Sidebar.css'
+import './Main.css'
 
 const Sidebar = () => {
     return (

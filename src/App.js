@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+
+import './App.css'
+import './Main.css'
 
 import Main from './Main'
 
@@ -9,8 +11,8 @@ class App extends Component {
       <div className="App">
         <Main />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
