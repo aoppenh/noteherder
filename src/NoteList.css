@@ -1,3 +1,9 @@
+button {
+  height: 5rem;
+  width: 10rem;
+  font-size: 4rem;
+}
+
 .NoteList {
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
