@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import './App.css'
-import './Main.css'
+import './Every.css'
 
 import Main from './Main'
 

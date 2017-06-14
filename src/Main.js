@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Main.css'
+import './Every.css'
 
 import Side from './Sidebar'
 import List from './NoteList'

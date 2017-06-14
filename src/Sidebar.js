@@ -2,7 +2,7 @@ import React from 'react'
 
 import quill from './quill.svg'
 import './Sidebar.css'
-import './Main.css'
+import './Every.css'
 
 const Sidebar = () => {
     return (
@@ -10,7 +10,7 @@ const Sidebar = () => {
             <div className="logo">
                 <img src={quill} alt="Noteherder" />
             </div>
-            <button className="new-note">
+            <button className="new-note" onClick={}>
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1152887/new-hover.png" alt="New note" />
                 <img className="outline" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1152887/new.png" alt="New note" />
             </button>
