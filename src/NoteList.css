@@ -70,6 +70,7 @@ ul#notes li .note-title {
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
+  text-align: left;
 }
 ul#notes li .note-body {
   height: 54px;
@@ -83,6 +84,7 @@ ul#notes li .note-body * {
   color: #999 !important;
   background: none;
   border: none;
+  text-align: left;
 }
 ul#notes li .note {
   display: block;
