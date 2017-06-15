@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 
-import './NoteList.css'
-
 class Note extends Component {
+    fav() {
+
+    }
+
+    del() {
+        
+    }
+
     render() {
         return (
             <div className="note">

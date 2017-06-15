@@ -8,7 +8,7 @@ import Note from './Note'
 const NoteList = () => {
     return (
         <div className="NoteList">
-            <h3>Notes <button className="fa fa-trash-o buttons" id="clear" /></h3>
+            <h3>Notes {/*<button className="fa fa-trash-o buttons" id="clear" />*/}</h3>
             <ul id="notes">
                 <li>
                     <Note />
