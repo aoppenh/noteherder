@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import './NoteList.css'
-import './Every.css'
 
 class Note extends Component {
     render() {

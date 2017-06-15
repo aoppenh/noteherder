@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import quill from './quill.svg'
 import './Sidebar.css'
-import './Every.css'
 
 class Sidebar extends Component {
     Alert(ev) {

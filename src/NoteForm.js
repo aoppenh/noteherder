@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import './NoteForm.css'
-import './Every.css'
 
 class NoteForm extends Component {
     render() {

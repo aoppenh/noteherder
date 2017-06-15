@@ -31,9 +31,9 @@
     .Sidebar button:hover img.outline {
       opacity: 0; }
 
-.logo img:hover {
+/*.logo img:hover {
   height: 80px;
   width: 60px;
   color: firebrick;
   transition: 2s;
-}
+}*/

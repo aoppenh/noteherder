@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 // import ReactAudioPlayer from 'react-audio-player'
 
 import './App.css'
-import './Every.css'
 
 import Main from './Main'
 
@@ -16,6 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/*Attempts at adding audio player capability*/}
         {/*<ReactAudioPlayer
           src="./big-car-theft.mp4"
           autoPlay
