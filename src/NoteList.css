@@ -3,7 +3,7 @@ button {
   width: 7rem;
   font-size: 4rem;
   color: black !important;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 #clear:hover {
@@ -12,21 +12,21 @@ button {
   font-size: 4rem;
   color: black !important;
   background-color: firebrick;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 #del:hover {
   width: 10rem;
   color: black !important;
-  background-color: crimson;
-  transition: 1s;
+  background-color: #FF3D31;
+  transition: 0.5s;
 }
 
 #fav:hover {
   width: 10rem;
   color: black !important;
-  background-color: goldenrod;
-  transition: 1s;
+  background-color: gold;
+  transition: 0.5s;
 }
 
 .NoteList {
@@ -63,7 +63,7 @@ ul#notes {
 }
 
 ul#notes > li {
-  height: 150px;
+  height: 120px;
   font-size: 90%;
   cursor: pointer;
   overflow: hidden;
@@ -72,7 +72,7 @@ ul#notes > li {
 ul#notes > li,
 ul#notes > li * {
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 ul#notes li .note {

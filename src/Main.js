@@ -1,19 +1,18 @@
 import React from 'react'
 
 import './Main.css'
+import Sidebar from './Sidebar'
+import NoteList from './NoteList'
+import NoteForm from './NoteForm'
 
-import Side from './Sidebar'
-import List from './NoteList'
-import Form from './NoteForm'
-
-const Main = () => {
-    return (
-        <div className="Main">
-            <Side />
-            <List />
-            <Form />
-        </div>
-    )
+const Main = (props) => {
+  return (
+    <div className="Main">
+      <Sidebar />
+      <NoteList notes={props.notes} delNote={props.delNote} favNote={props.favNote} fillForm={props.fillForm} />
+      <NoteForm saveNote={props.saveNote} currentNote={props.currentNote} />
+    </div>
+  )
 }
 
 export default Main

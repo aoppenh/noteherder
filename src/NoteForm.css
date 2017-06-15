@@ -39,3 +39,10 @@ textarea {
   height: calc(100vh - 140px);
   font-size: 1.3em;
 }
+
+#test:hover {
+  width: 10rem;
+  color: black !important;
+  background-color: lightgreen;
+  transition: 0.5s;
+}

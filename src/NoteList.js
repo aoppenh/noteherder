@@ -2,17 +2,20 @@ import React from 'react'
 
 import './NoteList.css'
 
-import Data from './NoteForm'
 import Note from './Note'
 
-const NoteList = () => {
+const NoteList = (props) => {
     return (
         <div className="NoteList">
             <h3>Notes {/*<button className="fa fa-trash-o buttons" id="clear" />*/}</h3>
             <ul id="notes">
-                <li>
-                    <Note />
-                </li>
+                {Object.keys(props.notes).map((noteId) => {
+                    return (
+                        <li key={noteId}>
+                            <Note note={props.notes[noteId]} key={noteId} delNote={props.delNote} favNote={props.favNote} fillForm={props.fillForm} />
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     )

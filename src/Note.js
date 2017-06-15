@@ -1,32 +1,39 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Note extends Component {
-    fav() {
-
+const Note = (props) => {
+    const del = (ev) => {
+        ev.preventDefault()
+        props.delNote(props.note)
     }
 
-    del() {
-        
+    const fav = (ev) => {
+        ev.preventDefault()
+        props.favNote(props.note)
     }
 
-    render() {
-        return (
+    const fill = (ev) => {
+        ev.preventDefault()
+        props.fillForm(props.note)
+    }
+
+    return (
+        <li onClick={fill}>
             <div className="note">
                 <div className="note-title">
-                    TEMP
+                    {props.note.title}
                 </div>
                 <div className="note-body">
                     <p>
-                        TEMP
+                        {props.note.body}
                     </p>
                 </div>
                 <div className="note-buttons">
-                    <button className="fa fa-eraser buttons" id="del" />
-                    <button className="fa fa-star-o buttons" id="fav" />
+                    <button className="fa fa-eraser buttons" id="del" onClick={del} />
+                    <button className="fa fa-star-o buttons" id="fav" onClick={fav} />
                 </div>
             </div>
-        )
-    }
+        </li>
+    )
 }
 
 export default Note
