@@ -20,26 +20,45 @@ class NoteForm extends Component {
   }
 
   handleChanges = (ev) => {
-    const note = {...this.state.note}
+    const note = { ...this.state.note }
     note[ev.target.name] = ev.target.value
     this.setState(
       { note },
       () => this.props.saveNote(this.state.note)
-    ) 
+    )
   }
 
   handleSubmit = (ev) => {
     ev.preventDefault()
     this.setState({ note: this.blankNote() })
-    console.log('clearing')
 
     ev.target.reset()
   }
+
+  del = (ev) => {
+    ev.preventDefault()
+    this.props.delNote(this.props.currentNote)
+
+    this.setState({
+      note: this.blankNote(),
+    })
+  }
+
+  fav = (ev) => {
+    ev.preventDefault()
+    this.props.favNote(this.props.currentNote)
+  }
+
 
   render() {
     return (
       <div className="NoteForm">
         <form onSubmit={this.handleSubmit}>
+          <div className="note-buttons">
+            <button type="submit" className="fa fa-floppy-o buttons" id="test" />
+            <button className="fa fa-eraser buttons" id="del" onClick={this.del} />
+            {/*<button className="fa fa-star-o buttons" id="fav" onClick={this.fav} />*/}
+          </div>
           <p>
             <input
               type="text"
@@ -57,7 +76,6 @@ class NoteForm extends Component {
               value={this.props.currentNote.body}
             ></textarea>
           </p>
-          <button type="submit" className="fa fa-check buttons" id="test" />
         </form>
       </div>
     )

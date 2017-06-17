@@ -28,7 +28,14 @@ class App extends Component {
     }
     notes[note.id] = note
     delete notes[note.id]
-    this.setState({ notes })
+    this.setState({
+      notes,
+      currentNote: {
+        id: '',
+        title: '',
+        body: '',
+      }
+    })
   }
 
   favNote = (note) => {
@@ -41,7 +48,12 @@ class App extends Component {
   }
 
   fillForm = (note) => {
-    this.setState({ currentNote: '' })
+    this.setState({
+      currentNote: {
+        title: '',
+        body: '',
+      }
+    })
     this.setState({ currentNote: note })
   }
 
