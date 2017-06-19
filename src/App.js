@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from './Main'
 import base from './base'
+import SignIn from './SignIn'
+import SignOut from './SignOut'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
+      uid: null,
       notes: {},
       currentNote: ''
     }
@@ -68,10 +71,31 @@ class App extends Component {
     this.setState({ currentNote: note })
   }
 
+  authHandler = (userData) => {
+    this.setState({ uid: userData.uid })
+  }
+
+  signedIn = () => {
+    return this.state.uid
+  }
+
+  signOut = () => {
+    this.setState({ uid: null })
+  }
+
+  renderMain = () => {
+    return (
+      <div>
+        <SignOut signOut={this.signOut}/>
+        <Main notes={this.state.notes} saveNote={this.saveNote} delNote={this.delNote} favNote={this.favNote} fillForm={this.fillForm} currentNote={this.state.currentNote} />
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="App">
-        <Main notes={this.state.notes} saveNote={this.saveNote} delNote={this.delNote} favNote={this.favNote} fillForm={this.fillForm} currentNote={this.state.currentNote} />
+        {this.signedIn() ? this.renderMain() : <SignIn authHandler={this.authHandler}/>}
       </div>
     );
   }
