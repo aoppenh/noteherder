@@ -80,9 +80,9 @@ class NoteForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="note-buttons">
             <button type="submit" className="fa fa-floppy-o buttons" id="test" />
-            <button type="submit" className="fa fa-trash-o buttons" id="trash" onClick={this.rem} />
-            <button className="fa fa-eraser buttons" id="erase" onClick={this.erase} />
-            <button className="fa fa-star-o buttons" id="fav" onClick={this.fev} />
+            <button type="button" className="fa fa-trash-o buttons" id="trash" onClick={this.rem} />
+            <button type="button" className="fa fa-eraser buttons" id="erase" onClick={this.erase} />
+            <button type="button" className="fa fa-star-o buttons" id="fav" onClick={this.fev} />
           </div>
           <p>
             <input
