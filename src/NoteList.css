@@ -15,10 +15,10 @@ button {
   transition: 0.5s;
 }
 
-#del:hover {
+#erase:hover {
   width: 10rem;
   color: black !important;
-  background-color: #FF3D31;
+  background-color: #f471f4;
   transition: 0.5s;
 }
 

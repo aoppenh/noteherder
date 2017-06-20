@@ -11,6 +11,12 @@ class NoteForm extends Component {
     }
   }
 
+  componentWillReceiveProps = (nextProps) => {
+    if (nextProps.currentNoteId !== this.state.note.id) {
+      this.setState({ note: nextProps.notes[nextProps.currentNoteId] })
+    }
+  }
+
   blankNote = () => {
     return {
       id: null,
@@ -35,20 +41,38 @@ class NoteForm extends Component {
     ev.target.reset()
   }
 
-  del = (ev) => {
-    ev.preventDefault()
-    this.props.delNote(this.props.currentNote)
+  // del = (ev) => {
+  //   ev.preventDefault()
+  //   this.props.delNote(this.props.currentNote)
 
-    this.setState({
-      note: this.blankNote(),
-    })
+  //   this.setState({
+  //     note: this.blankNote(),
+  //   })
+  // }
+
+  // fav = (ev) => {
+  //   ev.preventDefault()
+  //   this.props.favNote(this.props.currentNote)
+  // }
+
+  rem = (ev) => {
+    ev.preventDefault()
+
+    this.props.removeNote(this.state.note)
+    this.setState({ note: this.blankNote() })
   }
 
-  fav = (ev) => {
+  erase = (ev) => {
     ev.preventDefault()
-    this.props.favNote(this.props.currentNote)
+
+    this.setState({ note: this.blankNote() })
   }
 
+  fev = (ev) => {
+    ev.preventDefault()
+
+
+  }
 
   render() {
     return (
@@ -56,8 +80,9 @@ class NoteForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="note-buttons">
             <button type="submit" className="fa fa-floppy-o buttons" id="test" />
-            <button className="fa fa-eraser buttons" id="del" onClick={this.del} />
-            {/*<button className="fa fa-star-o buttons" id="fav" onClick={this.fav} />*/}
+            <button type="submit" className="fa fa-trash-o buttons" id="trash" onClick={this.rem} />
+            <button className="fa fa-eraser buttons" id="erase" onClick={this.erase} />
+            <button className="fa fa-star-o buttons" id="fav" onClick={this.fev} />
           </div>
           <p>
             <input
@@ -65,7 +90,7 @@ class NoteForm extends Component {
               name="title"
               placeholder="Title your note"
               onChange={this.handleChanges}
-              value={this.props.currentNote.title}
+              value={this.state.note.title}
             />
           </p>
           <p>
@@ -73,7 +98,7 @@ class NoteForm extends Component {
               name="body"
               placeholder="Just start typing..."
               onChange={this.handleChanges}
-              value={this.props.currentNote.body}
+              value={this.state.note.body}
             ></textarea>
           </p>
         </form>

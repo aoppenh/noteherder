@@ -46,3 +46,10 @@ textarea {
   background-color: lightgreen;
   transition: 0.5s;
 }
+
+#trash:hover {
+  width: 10rem;
+  color: black !important;
+  background-color: #FF3D31;
+  transition: 0.5s;
+}

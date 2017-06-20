@@ -1,14 +1,14 @@
 import React from 'react'
 
 const Note = (props) => {
-    const fill = (ev) => {
-        ev.preventDefault()
-        props.fillForm(props.note)
-        console.log(props.note)
-    }
+    // const fill = (ev) => {
+    //     ev.preventDefault()
+    //     props.fillForm(props.note)
+    //     console.log(props.note)
+    // }
 
     return (
-        <li onClick={fill}>
+        <li onClick={() => props.setCurrentNoteId(props.note.id)}>
             <div className="note">
                 <div className="note-title">
                     {props.note.title}
