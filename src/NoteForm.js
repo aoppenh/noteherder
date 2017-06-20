@@ -70,8 +70,8 @@ class NoteForm extends Component {
 
   fev = (ev) => {
     ev.preventDefault()
-
-
+    
+        
   }
 
   render() {

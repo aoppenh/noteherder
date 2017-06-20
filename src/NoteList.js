@@ -7,7 +7,7 @@ import Note from './Note'
 const NoteList = (props) => {
     return (
         <div className="NoteList">
-            <h3>Notess</h3>
+            <h3>Notes</h3>
             <ul id="notes">
                 {Object.keys(props.notes).map((noteId) => {
                     return (

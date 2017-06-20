@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import Router from 'react-router'
 
 import './App.css'
 import Main from './Main'
@@ -46,13 +47,13 @@ class App extends Component {
       note.id = `note-${Date.now()}`
       this.setCurrentNoteId(note.id)
     }
-    const notes = {...this.state.notes}
+    const notes = { ...this.state.notes }
     notes[note.id] = note
     this.setState({ notes })
   }
 
   removeNote = (note) => {
-    const notes = {...this.state.notes}
+    const notes = { ...this.state.notes }
     notes[note.id] = null
     this.setState({ notes })
   }
@@ -72,11 +73,15 @@ class App extends Component {
     auth
       .signOut()
       .then(
-        () => {
-          // stop syncing with Firebase
-          base.removeBinding(this.ref)
-          this.setState({ notes: {} })
-        }
+      () => {
+        // stop syncing with Firebase
+        base.removeBinding(this.ref)
+        this.setState({
+          uid: null,
+          notes: {},
+          currentNoteId: null
+        })
+      }
       )
   }
 
@@ -108,9 +113,11 @@ class App extends Component {
 
   render() {
     return (
+      // <Router>
       <div className="App">
-        { this.signedIn() ? this.renderMain() : <SignIn authHandler={this.authHandler} /> }
+        {this.signedIn() ? this.renderMain() : <SignIn authHandler={this.authHandler} />}
       </div>
+      // </Router>
     )
   }
 }
