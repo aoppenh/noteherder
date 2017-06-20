@@ -4,10 +4,14 @@ import quill from './quill.svg'
 import './Sidebar.css'
 
 class Sidebar extends Component {
-    Alert(ev) {
+    Alert = (ev) => {
         ev.preventDefault()
 
         alert('Enter Your Notes & Save Them')
+    }
+
+    resetCurrentNote = () => {
+        
     }
 
     render() {

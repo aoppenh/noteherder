@@ -109,7 +109,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        { this.signedIn() ? this.renderMain() : <SignIn /> }
+        { this.signedIn() ? this.renderMain() : <SignIn authHandler={this.authHandler} /> }
       </div>
     )
   }
