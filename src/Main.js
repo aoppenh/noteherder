@@ -1,5 +1,4 @@
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
 
 import './Main.css'
 import Sidebar from './Sidebar'
@@ -11,14 +10,7 @@ const Main = (props) => {
     <div className="Main">
       <Sidebar {...props} />
       <NoteList notes={props.notes} fillForm={props.fillForm} setCurrentNoteId={props.setCurrentNoteId} />
-      <Switch>
-        <Route path="/notes/:id" render={(navProps) => (
-          <NoteForm {...props} {...navProps} />
-        )} />
-        <Route render={(navProps) => (
-          <NoteForm {...props} {...navProps} />
-        )} />
-      </Switch>
+      <NoteForm {...props} />
     </div>
   )
 }

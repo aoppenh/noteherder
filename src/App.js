@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import './App.css'
 import Main from './Main'
@@ -89,29 +89,7 @@ class App extends Component {
     this.setState({ currentNoteId: noteId })
   }
 
-  // renderMain = () => {
-  //   const actions = {
-  //     saveNote: this.saveNote,
-  //     removeNote: this.removeNote,
-  //     setCurrentNoteId: this.setCurrentNoteId,
-  //   }
-  //   const noteData = {
-  //     notes: this.state.notes,
-  //     currentNoteId: this.state.currentNoteId,
-  //   }
-
-  //   return (
-  //     <div>
-  //       <SignOut signOut={this.signOut} />
-  //       <Main
-  //         {...noteData}
-  //         {...actions}
-  //       />
-  //     </div>
-  //   )
-  // }
-
-  render() {
+  renderMain = () => {
     const actions = {
       saveNote: this.saveNote,
       removeNote: this.removeNote,
@@ -123,24 +101,23 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <Switch>
-          <Route path="/notes" render={() => (
-            <div>
-              <SignOut signOut={this.signOut} />
-              <Main
-                {...noteData}
-                {...actions}
-              />
-            </div>
-          )} />
-          <Route path="/sign-in" render={() => (
-            <SignIn authHandler={this.authHandler} />
-          )} />
-          <Route render={() => <Redirect to="/notes" />} />
-        </Switch>
-        {/*{this.signedIn() ? this.renderMain() : <SignIn authHandler={this.authHandler} />}*/}
+      <div>
+        <SignOut signOut={this.signOut} />
+        <Main
+          {...noteData}
+          {...actions}
+        />
       </div>
+    )
+  }
+
+  render() {
+    return (
+      <Route>
+        <div className="App">
+          {this.signedIn() ? this.renderMain() : <SignIn authHandler={this.authHandler} />}
+        </div>
+      </Route>
     )
   }
 }
