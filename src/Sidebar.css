@@ -31,6 +31,10 @@
     .Sidebar button:hover img.outline {
       opacity: 0; }
 
+#quill {
+  height: 7.5rem;
+}
+
 /*.logo img:hover {
   height: 80px;
   width: 60px;
